@@ -1,0 +1,5 @@
+'use client';
+import { hero, todaySignals } from '@/data/mockData';
+import { useI18n } from '@/lib/i18n';
+import { Page } from '@/components/common/Page';
+export function ShareCard(){const {locale,dict}=useI18n();return <Page title={dict.nav.share} kicker="Social-ready proof of growth"><div className="mx-auto max-w-xl rounded-[2.5rem] bg-gradient-to-br from-sky via-blue-500 to-mint p-8 text-white shadow-2xl"><span className="rounded-full bg-white/20 px-4 py-2 text-sm font-bold">{hero.streak}-Day Growth Streak</span><div className="mt-10 text-8xl font-black">+{hero.growthScore}</div><h2 className="mt-4 text-3xl font-black">{hero.question[locale]}</h2><p className="mt-4 text-xl">{todaySignals[0].value[locale]} ✨</p><p className="mt-12 font-bold">Growth Portfolio</p></div><div className="mx-auto grid max-w-xl gap-3 sm:grid-cols-2">{[dict.x,dict.instagram,dict.copy,dict.download].map(b=><button className="rounded-2xl bg-slate-900 px-5 py-4 font-bold text-white dark:bg-white dark:text-slate-900" key={b}>{b}</button>)}</div></Page>}

@@ -1,1 +1,1 @@
-import { Settings } from '@/components/common/Cards';export default function Page(){return <Settings/>}
+import { Settings } from '@/components/settings';export default function Page(){return <Settings/>}

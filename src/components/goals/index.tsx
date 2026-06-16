@@ -1,0 +1,6 @@
+'use client';
+import { goals } from '@/data/mockData';
+import { useI18n } from '@/lib/i18n';
+import { MetricCard, ProgressBar } from '@/components/common/MetricCard';
+import { Page } from '@/components/common/Page';
+export function Goals(){const {locale,dict}=useI18n();return <Page title={dict.nav.goals} kicker="Goal achievement system"><div className="grid gap-4 md:grid-cols-3"><MetricCard label={dict.activeGoals} value={goals.length}/><MetricCard label={dict.growthScore} value={`+${goals.reduce((n,g)=>n+g.growthScore,0)}`}/><MetricCard label={dict.milestones} value={goals.reduce((n,g)=>n+g.milestones,0)}/></div><div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">{goals.map(g=><article className="glass rounded-[2rem] p-6" key={g.category[locale]}><span className="chip">{g.category[locale]}</span><h2 className="mt-4 text-2xl font-black">{g.name[locale]}</h2><div className="my-5"><ProgressBar value={g.progress}/></div><div className="flex justify-between font-bold"><span>{g.progress}%</span><span>+{g.growthScore}</span></div><p className="mt-4 text-sm"><b>{dict.lastEvent}:</b> {g.lastEvent[locale]}</p><p className="mt-2 text-sm text-slate-600 dark:text-slate-300"><b>{dict.nextAction}:</b> {g.nextAction[locale]}</p></article>)}</div></Page>}

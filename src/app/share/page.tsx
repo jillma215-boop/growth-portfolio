@@ -1,1 +1,1 @@
-import { ShareCard } from '@/components/common/Cards';export default function Page(){return <ShareCard/>}
+import { ShareCard } from '@/components/share';export default function Page(){return <ShareCard/>}
