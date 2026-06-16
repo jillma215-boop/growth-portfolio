@@ -1,0 +1,1 @@
+export function Page({title,kicker,children}:{title:string;kicker:string;children:React.ReactNode}){return <div className="mx-auto max-w-7xl space-y-6 p-4 lg:p-8"><div className="pt-3 lg:pt-6"><p className="font-bold text-sky-600">{kicker}</p><h1 className="mt-2 text-4xl font-black tracking-tight lg:text-6xl">{title}</h1></div>{children}</div>}

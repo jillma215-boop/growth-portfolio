@@ -1,1 +1,1 @@
-import { Timeline } from '@/components/common/Cards';export default function Page(){return <Timeline/>}
+import { Timeline } from '@/components/timeline';export default function Page(){return <Timeline/>}

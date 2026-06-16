@@ -1,1 +1,1 @@
-import { Goals } from '@/components/common/Cards';export default function Page(){return <Goals/>}
+import { Goals } from '@/components/goals';export default function Page(){return <Goals/>}

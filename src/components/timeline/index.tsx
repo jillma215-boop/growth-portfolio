@@ -1,0 +1,6 @@
+'use client';
+import { Heart, MessageCircle, Share2 } from 'lucide-react';
+import { timeline } from '@/data/mockData';
+import { useI18n } from '@/lib/i18n';
+import { Page } from '@/components/common/Page';
+export function Timeline(){const {locale,dict}=useI18n();return <Page title={dict.nav.timeline} kicker={dict.tagline}>{timeline.map(e=><article className="glass rounded-[2rem] p-6" key={e.event[locale]}><div className="flex gap-4"><div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gradient-to-br from-sky to-mint font-black text-white">{e.avatar}</div><div className="min-w-0 flex-1"><div className="flex flex-wrap gap-2"><span className="chip">{e.category[locale]}</span><span className="chip">+{e.score} {dict.growthScore}</span></div><h2 className="mt-3 text-2xl font-black">{e.event[locale]}</h2><p className="mt-2 text-slate-600 dark:text-slate-300">{e.note[locale]}</p><div className="mt-5 flex gap-5 text-sm text-slate-500"><span className="flex gap-1"><Heart size={17}/>{e.likes} {dict.likes}</span><span className="flex gap-1"><MessageCircle size={17}/>{e.comments} {dict.comments}</span><button className="flex gap-1"><Share2 size={17}/>{dict.share}</button></div></div></div></article>)}</Page>}
